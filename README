@@ -1,3 +1,9 @@
+1. To compile you have to execute 'makefile' file (./makefile)
+2. To execute programme you have to type in console "./serwer", and if you would like to execute client then type "./klient".
+3. Files description:
+inf117192_k.c - client
+inf117192_s.c - client
+
 1. Aby skompilować należy uruchomić plik makefile (./makefile)
 2. Aby uruchomić program należy w konsoli wpisać "./serwer", i w przypadku chęci uruchomienia klienta wpisać w drugiej konsoli "./klient".
 3. Opis plików:
