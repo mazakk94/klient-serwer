@@ -1,0 +1,24 @@
+
+struktury dla obu plików:
+msgbuf - standardowo wg specyfikacji struktura wiadomości zawierająca wszystkie potrzebne informacje potrzebne do przesłania komunikatu
+
+KLIENT
+struktury:
+singleMessage - struktura wiadomości zapisywana po stronie klienta (zawiera datę, nick oraz treść wiadomości)
+
+funkcje i procedury:
+addToMessageBox - procedura dodająca wiadomości do tablicy 10-elementowej typu singleMessage z opracowaną obsługą ustawiania kolejności wiadomości (gdy tablica jest przepełniona, usuwamy najstarszą wiadomość (pierwszy element) oraz przesuwamy pozostałe wiadomości na początek i dodajemy najnowszą wiadomość na koniec tablicy)
+
+clearMessageBox, printMessageBox, printMenu, printAnswer - pomocnicze procedury do czyszczenia tablicy wiadomości, drukowania na ekran wiadomości/menu oraz odpowiedzi serwera w zależności od statusu, który wysłał
+
+SendMessage - uniwersalna procedura, która przyjmuje parametry potrzebne, aby serwer mógł w odpowiedni sposób zareagowac na komunikat oraz wysyłanie komunikatu. Myślę, że najlepiej jak podanie wartości potrzebnych zmiennych znajduje się w jednym miejscu
+
+main - w głównym wątku umieściłem pętlę nieskończoną, która obsługuje klienta: 
+-przyjmuje za pomocą scanf "command" , który następnie w zależności od jej wartości wykonuje daną funkcję oraz odbiera odpowiedź od serwera
+
+SERWER
+struktury:
+user - struktura przechowująca jednego użytkownika - posiada nick usera oraz jego pid
+group - struktura, która przechowuje swoją nazwę oraz tablicę użytkowników (user) 
+
+
